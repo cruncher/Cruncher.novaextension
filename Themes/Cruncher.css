@@ -1,0 +1,347 @@
+meta {
+    -theme-interface-style: dark;
+    -theme-vibrancy: vibrant;
+    -theme-accent-color: auto;
+}
+
+
+/*
+ * Window styles
+ */
+meta.window {
+    background-color: hsb(210, 10%, 20%);
+    border-color: hsba(0, 0%, 100%, 0.1);
+}
+meta.titlebar {
+    color: hsb(210, 10%, 80%);
+    background: linear-gradient(hsb(210, 10%, 26%), hsb(210, 10%, 20%));
+    border-color: hsba(0, 0%, 0%, 0.6);
+}
+meta.titlebar.inactive {
+    background-color: hsb(210, 10%, 20%);
+}
+
+meta.button {
+    background: linear-gradient(hsb(210, 10%, 34%), hsb(210, 10%, 26%));
+    border: linear-gradient(hsb(210, 10%, 18%), hsb(210, 10%, 14%));
+    color: white;
+}
+meta.button.highlighted {
+    background: linear-gradient(hsb(210, 10%, 44%), hsb(210, 10%, 36%));
+    color: white;
+}
+meta.button.selected {
+    color: white;
+}
+meta.button.highlighted.selected {
+    color: white;
+}
+meta.button.disabled {
+    background: linear-gradient(hsb(210, 10%, 34%), hsb(210, 10%, 26%));
+    border: linear-gradient(hsb(210, 10%, 18%), hsb(210, 10%, 14%));
+    color: hsb(0, 0%, 40%);
+}
+
+meta.textfield {
+    background-color: hsb(210, 10%, 14%);
+    border-color: hsb(210, 10%, 10%);
+}
+
+meta.accent {
+    color: hsb(204, 78%, 97%);
+}
+
+/*
+ * Document styles
+ */
+meta.document {
+    color: #9AB7C7;
+    background-color: #141B1E;
+
+    border-color: hsba(0, 0%, 100%, 0.1);
+}
+
+meta.document.button {
+    background: linear-gradient(hsb(210, 10%, 26%), hsb(210, 10%, 22%));
+    border: linear-gradient(hsb(210, 10%, 12%), hsb(210, 10%, 8%));
+}
+meta.document.button.disabled {
+    background: linear-gradient(hsba(220, 10%, 26%, 0.3), hsba(220, 10%, 22%, 0.3));
+}
+meta.document.button.highlighted {
+    background: linear-gradient(hsb(210, 10%, 36%), hsb(210, 10%, 32%));
+}
+
+meta.document.textfield {
+    background-color: hsb(210, 10%, 10%);
+    border-color: hsb(210, 10%, 6%);
+}
+
+/* Text */
+meta.text {
+    color: #9AB7C7;
+}
+
+meta.text.invisible {
+    color: hsb(210, 20%, 20%);
+}
+
+meta.text.selected {
+}
+
+/* Cursor */
+meta.cursor {
+    background-color: hsb(210, 10%, 16%);
+}
+
+/* Indentation Guides */
+meta.indentguide {
+    border-color: hsba(220, 10%, 50%, 0.2);
+}
+
+/* Gutter */
+meta.gutter { color: #5E7F8F; }
+meta.gutter.selected { color: #9AB7C7; }
+
+
+thung {
+    color: #00B3E3;
+    color: #00A8E1;
+    color: #E19CDF;
+    color: #00AF41;
+    color: #009D4E;
+    color: #95D600;
+    color: #EF7622;
+    color: #9C5F16;
+    color: #FF5370;
+
+
+
+
+    
+    
+    
+
+    color: #C3E88D;
+    color: #B2CB3A;
+    color: #B6BD00;
+    color: #00C18B;
+    color: #5AB7B2;
+    color: #5FAB9A;
+    color: #5a998b;
+    color: #7DAED3;
+    color: #63ACDD;
+    color: #288DC1;
+    color: #82AAFF;
+    color: #7673C0;
+    color: #ffeff9;
+    color: #fdd3f9;
+    color: #efaef8;
+    color: #c877f7;
+    color: #a14fff;
+    color: #E13EAF;
+    color: #8C189B;
+    color: #a35f7a;
+    color: #FE267E;
+    color: #F5426C;
+    color: #ddb523
+    color: #FFDA00;
+    color: #f5a623;
+    color: #fc6827;
+    color: #D87900;
+    color: #C86201;
+    color: #8B572A;
+    color: #A77F73;
+    color: #bfb7a9;
+    color: #837b76;
+    color: #9AB7C7;
+    color: #779AAB;
+    color: #5E7F8F;
+    color: #485b68; /* Comment */
+    color: #141B1E; /* Background */
+    color: #f02f2f; /* Error */
+    color: #ba4029;
+}
+
+
+
+
+
+
+/*
+ * Syntax styles
+ */
+
+json          { color: #5E7F8F; }
+javascript    { color: #5E7F8F; }
+
+keyword                    { color: #288DC1; }
+keyword.construct          { color: #288DC1; }
+keyword.construct.new      { color: #fc6827; }
+keyword.condition          { color: #D87900; }
+keyword.operator           { color: green; }
+keyword.modifier           { color: #837b76; }
+keyword.modifier.from      { color: #5E7F8F; }
+keyword.modifier.set       { color: #C86201; }
+keyword.modifier.get       { color: #C86201; }
+keyword.statement          { color: #288DC1; }   /* import, export, from, return */
+keyword.statement.export   { color: #ba4029; }
+keyword.statement.error    { color: #f02f2f; }
+keyword.self               { color: #b1567d; }
+keyword.self.prefix        { color: #ba4029; }
+
+comment         { color: #485b68; }
+processing      { color: red; }
+declaration     { color: #837b76; }
+operator        { color: #5E7F8F; }
+operator.equals { color: #5E7F8F; }
+operator.rest   { color: #5E7F8F; }
+link            { color: red; }
+bracket         { color: #5E7F8F; }
+
+/* Functions */
+
+keyword.construct.function  { color: #fc6827; }
+keyword.statement.flow,
+keyword.statement.return    { color: #ba4029; }
+operator.generator          { color: #C86201; }
+operator.arrow              { color: #837b76; }
+bracket.function            { color: #837b76; }
+arguments.bracket           { color: #837b76; }
+arguments.bracket.arrow     { color: #837b76; }
+arguments.bracket.anonymous { color: #837b76; }
+arguments.bracket.error     { color: #f02f2f; }
+
+
+/* Values */
+value.null    { color: #5E7F8F; }
+value.boolean { color: #7673C0; }
+value.number  { color: #F5426C; }
+value.entity  { color: #5E7F8F; }
+value.symbol  { color: red; }
+
+/* Identifiers */
+identifier               { color: #779AAB; }
+identifier.name          { color: #7DAED3; }
+identifier.argument.javascript { color: #7DAED3; }
+
+identifier.property      { color: #9AB7C7; }
+identifier.decorator     { color: #fc6827; }
+identifier.function      { color: #f5a623; }
+identifier.method        { color: #f5a623; }
+method.dot               { color: #837b76; }
+identifier.method.catch  { color: #C86201; }
+method.dot.catch         { color: #8B572A; }
+arguments.bracket.catch  { color: #8B572A; }
+identifier.global        { color: #779AAB; }
+identifier.global.error  { color: #f5a623; }
+identifier.constant,
+identifier.variable      { color: #5E7F8F; }
+identifier.argument      { color: #9AB7C7; }
+
+identifier.console       { color: #bfb7a9; }
+
+
+
+identifier.type          { color: red; }
+identifier.type.class    { color: red; }
+identifier.type.protocol { color: red; }
+identifier.type.enum     { color: red; }
+identifier.type.union    { color: red; }
+identifier.type.struct   { color: red; }
+
+
+/*identifier.core          { color: #fc6827; }*/
+identifier.function.core { color: #fc6827; }
+
+/* Strings */
+string             { color: #B2CB3A; }
+string.escape      { color: #5FAB9A; }
+string-keyword     { color: #5FAB9A; }
+string.backtick-quoted { color: #5FAB9A; }
+string-template    { color: #5a998b; }
+
+tag.literal        { color: #5E7F8F; }
+
+string.key           { color: #288DC1; }
+key.string.delimiter { color: #5a998b; }
+key.bracket          { color: #5a998b; }
+identifier.key       { color: #5FAB9A; }
+
+regex              { color: #a14fff; }
+regex.escape       { color: #a14fff; }
+regex.group-1      { color: #cb77f7; }
+regex.group-2      { color: #efaef8; }
+regex.group-3      { color: #fdd3f9; }
+regex.group-4      { color: #ffeff9; }
+regex.character-class           { font-style: italic; }
+regex.character-class.delimiter { font-style: none; }
+regex.operator.or          { color: #6e36ae; }
+regex.group-1.operator.or  { color: #9659b6; }
+regex.group-2.operator.or  { color: #b283b9; }
+regex.group-3.operator.or  { color: #c2a3c0; }
+regex.group-4.operator.or  { color: #c7bbc3; }
+
+cdata { color: hsb(210, 60%, 100%); }
+
+/* Markup */
+markup               { color: #5E7F8F; }
+markup.heading       { color: #779AAB; }
+markup.line          { color: red; }
+markup.bold          { color: red; font-weight: bold; }
+markup.italic        { color: red; font-style: italic; }
+markup.strikethrough { color: red; }
+markup.list.item     { color: red; }
+markup.code          { color: #779AAB; }
+
+/* Types */
+definition.class class.name,
+definition.type type.name,
+definition.package package.name,
+definition.protocol protocol.name,
+definition.enum enum.name,
+definition.union union.name,
+definition.struct struct.name { color: red; }
+
+/* Members */
+definition.function { color: #837b76; }
+definition.property { color: #288DC1; }
+definition.property property.name { color: #288DC1; }
+definition.method { color: #f5a623; }
+
+/* Tags */
+tag                             { color: #fc6827; }
+tag.framework                   { color: #137bb1; }
+tag.attribute.name              { color: #f5a623; }
+tag.attribute.value             { color: #B6BD00; }
+tag.attribute.value.link        { }
+
+/* Styles  */
+style.at                        { color: #5FAB9A; }
+style.selector                  { color: #837b76; }
+style.selector.element          { color: #fc6827; }
+style.selector.identifier.id    { color: #FFDA00; }
+style.selector.identifier.class { color: #f5a623; }
+style.selector.pseudoclass      { color: #fc6827; }
+style.selector.pseudoelement    { color: #fc6827; }
+style.value.color               { color: #63ACDD; }
+/*style.value.color.hex           { color: #63ACDD; }*/
+/*style.value.color.named           { color: #63ACDD; }*/
+style.value.keyword             { color: #7DAED3; }
+style.value.property            { color: #7DAED3; }
+style.attribute                 { color: #5E7F8F; }
+style.attribute.name            { color: #288DC1; }
+style.function                  { color: #5AB7B2; }
+style.function.bracket          { color: #5FAB9A; }
+style.bracket                   { color: #837b76; }
+
+/* Django */
+django.templatetag              { color: #5E7F8F; }
+django.variable                 { color: #5E7F8F; }
+django.keyword                  { color: #288DC1; }
+django.argument                 { color: #7DAED3; }
+django.constant                 { color: #7DAED3; }
+django.variable.identifier      { color: #7DAED3; }
+
+invalid { color: #f02f2f; }
+

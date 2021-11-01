@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<syntax name="literal">
+    <meta>
+        <name>Literal</name>
+        <type>markup</type>
+        <preferred-file-extension>literal</preferred-file-extension>
+        <parent>html</parent>
+    </meta>
+    
+    <detectors>
+        <extension priority="1.0">literal,html.literal</extension>
+        <match-content lines="5" priority="1.0">^(//)?\s*vi:\s*(syntax|ft)=(js|javascript|jscript|ecmascript)\b</match-content>
+    </detectors>
+
+    <indentation>
+        <increase>
+            <expression>(\{[^}\"']*$)|(\[[^\]\"']*$)|(\([^)\"']*$)</expression>
+        </increase>
+        <decrease>
+            <expression>^\s*(\s*/\*.*\*/\s*)*[\}\]\)\\]</expression>
+        </decrease>
+    </indentation>
+    
+    <comments>
+        <single>
+            <expression>//</expression>
+        </single>
+        <multiline>
+            <starts-with>
+                <expression>/*</expression>
+            </starts-with>
+            <ends-with>
+                <expression>*/</expression>
+            </ends-with>
+        </multiline>
+    </comments>
+    
+    <brackets>
+        <pair open="{" close="}" />
+        <pair open="[" close="]" />
+        <pair open="(" close=")" />
+    </brackets>
+    
+    <surrounding-pairs>
+        <pair open="{" close="}" />
+        <pair open="[" close="]" />
+        <pair open="(" close=")" />
+        <pair open="&apos;" close="&apos;" />
+        <pair open="&quot;" close="&quot;" />
+        <pair open="`" close="`" />
+        <pair open="“" close="”" />
+        <pair open="‘" close="’" />
+    </surrounding-pairs>
+
+    <scopes>
+        <include syntax="html" />
+    </scopes>
+
+    <template-scopes>
+        <include syntax="self" collection="tags" />
+    </template-scopes>
+
+    <collections>
+        <collection name="tags">
+            <scope name="tag.literal">
+                <starts-with>
+                    <expression>\$\{</expression>
+                </starts-with>
+                <ends-with>
+                    <expression>\}</expression>
+                </ends-with>
+                <subscopes>
+                    <include syntax="js" collection="expressions" />
+                </subscopes>
+            </scope>
+        </collection>
+    </collections>
+</syntax>

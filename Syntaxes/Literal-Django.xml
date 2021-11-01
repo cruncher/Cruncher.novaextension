@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<syntax name="django-literal">
+    <meta>
+        <name>Literal / Django</name>
+        <type>markup</type>
+        <preferred-file-extension>literal</preferred-file-extension>
+        <parent>django</parent>
+    </meta>
+
+    <detectors>
+        <extension priority="1.0">html</extension>
+        <match-content lines="5" priority="1.0">^(//)?\s*vi:\s*(syntax|ft)=(js|javascript|jscript|ecmascript)\b</match-content>
+    </detectors>
+
+    <indentation>
+        <increase>
+            <expression>(\{[^}\"']*$)|(\[[^\]\"']*$)|(\([^)\"']*$)</expression>
+        </increase>
+        <decrease>
+            <expression>^\s*(\s*/\*.*\*/\s*)*[\}\]\)\\]</expression>
+        </decrease>
+    </indentation>
+
+    <brackets>
+        <pair open="{" close="}" />
+        <pair open="[" close="]" />
+        <pair open="(" close=")" />
+    </brackets>
+    
+    <surrounding-pairs>
+        <pair open="{" close="}" />
+        <pair open="[" close="]" />
+        <pair open="(" close=")" />
+        <pair open="&apos;" close="&apos;" />
+        <pair open="&quot;" close="&quot;" />
+        <pair open="`" close="`" />
+        <pair open="“" close="”" />
+        <pair open="‘" close="’" />
+    </surrounding-pairs>
+
+    <scopes>
+        <include syntax="self" collection="templates" />
+        <include syntax="html" />
+    </scopes>
+
+    <template-scopes>
+        <include syntax="django" collection="comments" />
+        <include syntax="django" collection="blocks" />
+        <include syntax="django" collection="tags" />
+        <include syntax="django" collection="variables" />
+        <include syntax="literal" collection="tags" />
+    </template-scopes>
+
+    <collections>
+        <collection name="templates">
+            <scope name="html.tag.template" spell-check="false" lookup="documentation">
+                <starts-with>
+                    <expression>(?=&lt;(?i:template)\b)</expression>
+                </starts-with>
+                <ends-with />
+                <subscopes anchored="true" skip-whitespace="false">
+                    <scope name="html.tag.template.open">
+                        <symbol type="tag-script">
+                            <display-name>
+                                <component variable="name" />
+                                <component selector="html.tag.attribute.value.link" prepend=" – " />
+                            </display-name>
+                            <context behavior="start" group-by-name="true">
+                                <auto-close string="&lt;/" completion="${name}&gt;" />
+                            </context>
+                        </symbol>
+                        <starts-with>
+                            <expression>&lt;((?i:template))</expression>
+                            <capture number="1" name="html.tag.name" />
+                        </starts-with>
+                        <ends-with>
+                            <expression>/?&gt;</expression>
+                        </ends-with>
+                        <subscopes>
+                            <include syntax="html" collection="attributes" />
+                        </subscopes>
+                    </scope>
+                    <scope name="html.embedded.template.content" optional="true">
+                        <starts-with>
+                            <expression>(?&lt;=&gt;)</expression>
+                        </starts-with>
+                        <ends-with>
+                            <expression>(?=&lt;/(?i:template)\b)</expression>
+                        </ends-with>
+                        <subscopes>
+                            <include syntax="literal" collection="tags" />
+                            <include syntax="django" />
+                            <cut-off>
+                                <expression>(?=&lt;/(?i:template|head|body|div)\b)</expression>
+                            </cut-off>
+                        </subscopes>
+                    </scope>
+                </subscopes>
+            </scope>
+        </collection>
+    </collections>
+</syntax>
