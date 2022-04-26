@@ -1,11 +1,12 @@
 
+this
 undefined
 null
 true
 false
 'string'
 "string"
-`string ${ assign({}, {}) } with tag`
+`string with tags ${ assign({}, {}) }`
 Infinity
 NaN
 -30
@@ -15,10 +16,10 @@ NaN
 /^regexp$/
 /^regexp(group)$/
 /^regexp(group(group(group(group))))$/
-/^regexp\(not-group\)|[chars](group|[chars](group|[chars](group|[chars](group|[chars])+)?)*){8}$/
+/^regexp\(not-a-group\)|[chars](group|[chars](group|[chars](group|[chars](group|[chars])+)?)*){8}$/
 // Comment
 /* Comment */
-() => () === 3 ;
+() => ()
 () => {}
 function() { return; }
 function name() { return; }
@@ -26,16 +27,16 @@ function*() { yield; }
 function* name() { yield; }
 async function() {}
 async function name() {}
-import name     from './path/to.js';
-import { name } from './path/to.js';
-const array = [];
-const object = {};
-const fn = () => {};
 export function name() { return; }
 export default function name() { return; }
+import name     from './path/to.js';
+import { name } from './path/to.js';
+const array  = [];
+const object = {};
+const fn     = () => {};
 throw new Error()
 try {}
-catch() {}
+catch(e) {}
 
 const expression = (n + 1);
 const [ value, ...array ] = array;
@@ -113,8 +114,8 @@ const object = {
 
 let array = [
     'string',
-    0, 
-    true, 
+    0,
+    true,
     undefined
 ];
 
@@ -144,14 +145,14 @@ fetch('url', {
 });
 
 if (object.property) {
-    
+
 }
 else {
-    
+
 }
 
 function Name(one, two) {
-    
+
 }
 
 async function name() {
@@ -160,7 +161,7 @@ async function name() {
 }
 
 const dddre = function arse() {
-    
+
 };
 
 formData.forEach(function(value, key) {
